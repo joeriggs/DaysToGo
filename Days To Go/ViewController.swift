@@ -43,7 +43,8 @@ class ViewController: UIViewController {
         resultFormatter.allowedUnits = [.day, .hour, .minute, .second]
         resultFormatter.unitsStyle = .abbreviated
 
-        // Initialize endTime.  It contains our target timestamp.
+        // Initialize endTime.  It contains our target timestamp.  This will change
+        // as soon as we can save/restore dates.
         if let userDate = String("2017/06/17 18:45") {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd HH:mm"
