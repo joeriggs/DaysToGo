@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,23 +19,29 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gO0-7N-XGC">
-                                <rect key="frame" x="16" y="168" width="343" height="57"/>
-                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="50"/>
+                                <rect key="frame" x="16" y="105" width="288" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="CAu-Sn-m9j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counting down to --:--:--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lik-Xx-Mh9">
-                                <rect key="frame" x="90" y="104" width="195" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counting down to --:--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lik-Xx-Mh9">
+                                <rect key="frame" x="16" y="74" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ki5-lN-TVM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLQ-qV-RBR">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="PIL-Dy-rOA"/>
                                 </constraints>
@@ -43,9 +49,8 @@
                                     <navigationItem title="Days To Go" id="fhd-Kc-5YO"/>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xlM-Ss-iOq">
-                                <rect key="frame" x="0.0" y="431" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xlM-Ss-iOq">
+                                <rect key="frame" x="16" y="172" width="288" height="376"/>
                                 <date key="date" timeIntervalSinceReferenceDate="519596252.48158699">
                                     <!--2017-06-19 20:17:32 +0000-->
                                 </date>
@@ -58,13 +63,19 @@
                         <constraints>
                             <constraint firstItem="lik-Xx-Mh9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2EV-5A-LSw"/>
                             <constraint firstItem="gO0-7N-XGC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6LI-bm-GT3"/>
-                            <constraint firstItem="gO0-7N-XGC" firstAttribute="top" secondItem="lik-Xx-Mh9" secondAttribute="bottom" constant="43" id="CM2-mW-3ht"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xlM-Ss-iOq" secondAttribute="trailing" id="7MP-vy-vql"/>
+                            <constraint firstItem="gO0-7N-XGC" firstAttribute="top" secondItem="lik-Xx-Mh9" secondAttribute="bottom" constant="10" id="CM2-mW-3ht"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lik-Xx-Mh9" secondAttribute="trailing" id="DGp-4m-Imz"/>
+                            <constraint firstItem="xlM-Ss-iOq" firstAttribute="top" secondItem="gO0-7N-XGC" secondAttribute="bottom" constant="10" id="OZo-k6-gG6"/>
                             <constraint firstAttribute="trailing" secondItem="kLQ-qV-RBR" secondAttribute="trailing" id="RsH-cD-hrq"/>
                             <constraint firstItem="kLQ-qV-RBR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SzI-Hu-LLq"/>
-                            <constraint firstItem="lik-Xx-Mh9" firstAttribute="top" secondItem="kLQ-qV-RBR" secondAttribute="bottom" constant="40" id="U5m-hU-uxI"/>
+                            <constraint firstItem="lik-Xx-Mh9" firstAttribute="top" secondItem="kLQ-qV-RBR" secondAttribute="bottom" constant="10" id="U5m-hU-uxI"/>
                             <constraint firstItem="gO0-7N-XGC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YkH-SE-CYo"/>
-                            <constraint firstItem="gO0-7N-XGC" firstAttribute="top" secondItem="lik-Xx-Mh9" secondAttribute="bottom" constant="43" id="qmi-ma-BrJ"/>
+                            <constraint firstItem="xlM-Ss-iOq" firstAttribute="top" secondItem="gO0-7N-XGC" secondAttribute="bottom" constant="10" id="ZvJ-at-tPW"/>
+                            <constraint firstItem="lik-Xx-Mh9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fU4-lR-fcq"/>
+                            <constraint firstItem="xlM-Ss-iOq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="glm-Sq-5Nn"/>
                             <constraint firstItem="kLQ-qV-RBR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sEC-FN-CHj"/>
+                            <constraint firstAttribute="bottom" secondItem="xlM-Ss-iOq" secondAttribute="bottom" constant="20" symbolic="YES" id="tOz-eL-r3A"/>
                         </constraints>
                     </view>
                     <connections>
@@ -75,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98.550724637681171" y="122.28260869565219"/>
+            <point key="canvasLocation" x="-100" y="121.88905547226388"/>
         </scene>
     </scenes>
 </document>
