@@ -33,24 +33,36 @@ class ViewController: UIViewController {
     @IBAction func datePickerTapped(_ sender: UIDatePicker) {
         endTime = datePickerValue.date
         descLabel.text = targetDateFormatter.string(from: endTime)
+
+        // Save the new target date.
+        UserDefaults.standard.set(endTime.timeIntervalSinceReferenceDate, forKey: "targetDate")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
         // Set targetDateFormatter to the format we use for displaying the target date.
-        targetDateFormatter.dateFormat = "dd/MM/yyyy H:mm a"
+        targetDateFormatter.dateFormat = "MM/dd/yyyy H:mm a"
         
         // Initialize our resultFormatter.  We use it for 2 different things:
         // 1. To calculate the difference between curTime and endTime.
         // 2. To format the result that we display on the screen.
-        resultFormatter.allowedUnits = [.day, .hour, .minute, .second]
+        resultFormatter.allowedUnits = [.year, .month, .day, .hour, .minute, .second]
         resultFormatter.unitsStyle = .abbreviated
+        resultFormatter.zeroFormattingBehavior = .dropLeading
 
-        // Initialize endTime.  It contains our target timestamp.  This will change
-        // as soon as we can save/restore dates.
-        endTime = datePickerValue.date
+        // Grab the saved endDate and initialize the UIDatePicker.
+        let etInt = UserDefaults.standard.integer(forKey: "targetDate")
+        print("The starting timestamp is \(etInt).")
+        if etInt > 0 {
+            endTime = Date(timeIntervalSinceReferenceDate: TimeInterval(etInt))
+        } else {
+            endTime = datePickerValue.date
+        }
+        datePickerValue.setDate(endTime, animated: true)
+        
+        // Start the timer.
         descLabel.text = targetDateFormatter.string(from: endTime)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
     }
