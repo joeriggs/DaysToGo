@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,71 +21,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gO0-7N-XGC">
-                                <rect key="frame" x="16" y="105" width="288" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="CAu-Sn-m9j"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counting down to --:--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lik-Xx-Mh9">
-                                <rect key="frame" x="16" y="74" width="288" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Ki5-lN-TVM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLQ-qV-RBR">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="PIL-Dy-rOA"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Days To Go" id="fhd-Kc-5YO"/>
+                                    <navigationItem title="Days To Go" id="fhd-Kc-5YO">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="ddU-Ec-fSG">
+                                            <connections>
+                                                <action selector="editButtonTapped:" destination="BYZ-38-t0r" id="jbC-bH-fsH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="J9V-OP-Wnr">
+                                            <connections>
+                                                <segue destination="uWa-0D-9nq" kind="show" id="DOF-Ox-o1R"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xlM-Ss-iOq">
-                                <rect key="frame" x="16" y="172" width="288" height="376"/>
-                                <date key="date" timeIntervalSinceReferenceDate="519596252.48158699">
-                                    <!--2017-06-19 20:17:32 +0000-->
-                                </date>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zto-XN-D1J">
+                                <rect key="frame" x="0.0" y="64" width="320" height="484"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="datePickerTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="G11-tJ-boj"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Cwe-UE-pkv"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2Kg-Y8-tef"/>
                                 </connections>
-                            </datePicker>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lik-Xx-Mh9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2EV-5A-LSw"/>
-                            <constraint firstItem="gO0-7N-XGC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6LI-bm-GT3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xlM-Ss-iOq" secondAttribute="trailing" id="7MP-vy-vql"/>
-                            <constraint firstItem="gO0-7N-XGC" firstAttribute="top" secondItem="lik-Xx-Mh9" secondAttribute="bottom" constant="10" id="CM2-mW-3ht"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lik-Xx-Mh9" secondAttribute="trailing" id="DGp-4m-Imz"/>
-                            <constraint firstItem="xlM-Ss-iOq" firstAttribute="top" secondItem="gO0-7N-XGC" secondAttribute="bottom" constant="10" id="OZo-k6-gG6"/>
                             <constraint firstAttribute="trailing" secondItem="kLQ-qV-RBR" secondAttribute="trailing" id="RsH-cD-hrq"/>
                             <constraint firstItem="kLQ-qV-RBR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SzI-Hu-LLq"/>
-                            <constraint firstItem="lik-Xx-Mh9" firstAttribute="top" secondItem="kLQ-qV-RBR" secondAttribute="bottom" constant="10" id="U5m-hU-uxI"/>
-                            <constraint firstItem="gO0-7N-XGC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YkH-SE-CYo"/>
-                            <constraint firstItem="xlM-Ss-iOq" firstAttribute="top" secondItem="gO0-7N-XGC" secondAttribute="bottom" constant="10" id="ZvJ-at-tPW"/>
-                            <constraint firstItem="lik-Xx-Mh9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fU4-lR-fcq"/>
-                            <constraint firstItem="xlM-Ss-iOq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="glm-Sq-5Nn"/>
                             <constraint firstItem="kLQ-qV-RBR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sEC-FN-CHj"/>
-                            <constraint firstAttribute="bottom" secondItem="xlM-Ss-iOq" secondAttribute="bottom" constant="20" symbolic="YES" id="tOz-eL-r3A"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="datePickerValue" destination="xlM-Ss-iOq" id="glD-df-aOR"/>
-                        <outlet property="descLabel" destination="lik-Xx-Mh9" id="gTY-37-dST"/>
-                        <outlet property="progressLabel" destination="gO0-7N-XGC" id="dnh-Xa-e3t"/>
+                        <outlet property="editButton" destination="ddU-Ec-fSG" id="aKW-9x-DQy"/>
+                        <outlet property="ourTableView" destination="Zto-XN-D1J" id="7t9-3N-hZ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="121.88905547226388"/>
+            <point key="canvasLocation" x="-101.25" y="121.47887323943662"/>
+        </scene>
+        <!--Add New Date View Controller-->
+        <scene sceneID="e7T-HC-niZ">
+            <objects>
+                <viewController id="uWa-0D-9nq" customClass="AddNewDateViewController" customModule="Days_To_Go" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aJF-3V-ANq"/>
+                        <viewControllerLayoutGuide type="bottom" id="sJF-En-Iet"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Jn-IF-boa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Crp-cV-O6L">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Item" id="7nW-5T-Grx">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IJZ-Dl-TfY">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="l3F-OD-v64"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UPp-ed-tIz">
+                                            <connections>
+                                                <action selector="saveNewDate:" destination="uWa-0D-9nq" id="vDK-DB-XYx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bsq-U2-Ktx">
+                                <rect key="frame" x="0.0" y="91" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="521302549.26146001">
+                                    <!--2017-07-09 14:15:49 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="newDate" destination="bsq-U2-Ktx" id="bf6-VP-nML"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CqM-Xv-vpj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564.375" y="121.47887323943662"/>
         </scene>
     </scenes>
 </document>
