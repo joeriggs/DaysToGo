@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CCB71271F1636F30000C03B /* TargetDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB71261F1636F30000C03B /* TargetDate.swift */; };
+		4CCB71291F164CA90000C03B /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB71281F164CA90000C03B /* MyTableViewCell.swift */; };
 		4CD7F1971F1272BE0022A2E0 /* AddNewDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD7F1961F1272BE0022A2E0 /* AddNewDateViewController.swift */; };
 		4CF8BB9B1EF5594C00F50541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8BB9A1EF5594C00F50541 /* AppDelegate.swift */; };
 		4CF8BB9D1EF5594D00F50541 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8BB9C1EF5594D00F50541 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CCB71261F1636F30000C03B /* TargetDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TargetDate.swift; path = ../TargetDate.swift; sourceTree = "<group>"; };
+		4CCB71281F164CA90000C03B /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		4CD7F1961F1272BE0022A2E0 /* AddNewDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewDateViewController.swift; sourceTree = "<group>"; };
 		4CF8BB971EF5594C00F50541 /* Days To Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Days To Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF8BB9A1EF5594C00F50541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,9 +60,11 @@
 		4CF8BB991EF5594C00F50541 /* Days To Go */ = {
 			isa = PBXGroup;
 			children = (
-				4CF8BB9A1EF5594C00F50541 /* AppDelegate.swift */,
-				4CF8BB9C1EF5594D00F50541 /* ViewController.swift */,
 				4CD7F1961F1272BE0022A2E0 /* AddNewDateViewController.swift */,
+				4CF8BB9A1EF5594C00F50541 /* AppDelegate.swift */,
+				4CCB71281F164CA90000C03B /* MyTableViewCell.swift */,
+				4CCB71261F1636F30000C03B /* TargetDate.swift */,
+				4CF8BB9C1EF5594D00F50541 /* ViewController.swift */,
 				4CF8BB9E1EF5594D00F50541 /* Main.storyboard */,
 				4CF8BBA11EF5594D00F50541 /* Assets.xcassets */,
 				4CF8BBA31EF5594D00F50541 /* LaunchScreen.storyboard */,
@@ -139,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCB71271F1636F30000C03B /* TargetDate.swift in Sources */,
 				4CF8BB9D1EF5594D00F50541 /* ViewController.swift in Sources */,
 				4CD7F1971F1272BE0022A2E0 /* AddNewDateViewController.swift in Sources */,
+				4CCB71291F164CA90000C03B /* MyTableViewCell.swift in Sources */,
 				4CF8BB9B1EF5594C00F50541 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
