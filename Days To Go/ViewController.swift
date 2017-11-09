@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     // This is our one-second timer function.  All it does is force the TableView to be
     // reloaded.  Each TableView cell will be recalculated as the table is reloaded.
-    func timerFunc() {
+    @objc func timerFunc() {
         ourTableView.reloadData()
     }
 
